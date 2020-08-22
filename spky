@@ -1,0 +1,15 @@
+
+#!/bin/bash
+
+if [[ $1 == "-on" ]]
+then
+  mkdir $HOME/.termux/ ;echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> $HOME/.termux/termux.properties; termux-reload-settings;
+  echo -e "\n\n Se activo, ejecuta 'spky -off' para apagar las teclas extras \n\n"
+elif [[ $1 == "-off" ]]
+then
+  rm -rf $HOME/.termux
+  echo -e "\n\n Se han desactivado las teclas extras, reinicia tu terminal para ver los cambios uwu \n\n"
+else
+  echo -e "\n\n Agrega al comando la bandera '-on' para activar las teclas extras o '-off' para apagarlas \n\n"
+fi
+
